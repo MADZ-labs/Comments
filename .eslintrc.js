@@ -3,4 +3,12 @@ module.exports = {
     rules: {
         'no-console': 'off',
     },
+    {
+      "globals": {
+        "document": true,
+        "foo": true,
+        "window": true
+      }
+    }
 };
+
