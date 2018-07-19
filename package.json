@@ -2,7 +2,6 @@
   "name": "Comments",
   "version": "1.0.0",
   "description": "comments component of a popular crowdfunding website",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
@@ -38,6 +37,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "express": "^4.16.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
