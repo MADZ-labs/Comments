@@ -1,16 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 class App extends React.Component {
   constructor() {
     super();
+    this.state({
+
+    });
   }
+
   render() {
     return (
-      <div>hello</div>
-    )
+      <div>
+        hello
+      </div>
+    );
   }
-};
+}
 
 
 ReactDOM.render(<App />, document.getElementById('app'));

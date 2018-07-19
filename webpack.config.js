@@ -1,9 +1,9 @@
 const path = require('path');
-// const HtmlWebPackPlugin = require("html-webpack-plugin");
+// const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 // const htmlPlugin = new HtmlWebPackPlugin({
-//   template: "./client/index.html",
-//   filename: "./client/dist/index.html"
+//   template: './client/index.html',
+//   filename: './client/dist/index.html'
 // });
 
 module.exports = {
