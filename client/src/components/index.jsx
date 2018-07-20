@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../stylesheets/main.scss'
-
+import '../stylesheets/main.scss';
+/* eslint-env browser */
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
 
     };
@@ -13,8 +13,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        goodbye
-        <div>react</div>
+        <h1>Comment Section</h1>
+        <div>
+          goodbye
+        </div>
+        <div>
+          react
+        </div>
       </div>
     );
   }
