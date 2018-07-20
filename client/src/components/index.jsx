@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '../stylesheets/main.scss'
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state({
+    this.state = {
 
-    });
+    };
   }
 
   render() {
     return (
       <div>
-        hello
+        goodbye
+        <div>react</div>
       </div>
     );
   }

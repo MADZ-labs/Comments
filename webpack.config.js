@@ -7,7 +7,7 @@ const path = require('path');
 // });
 
 module.exports = {
-  entry: './client/components/index.jsx',
+  entry: './client/src/components/index.jsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'client/dist')
@@ -23,8 +23,13 @@ module.exports = {
             presets: ['env', 'react'] 
           }
         },
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
+
   },
   // plugins: [htmlPlugin],
   resolve: {
