@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "comments component of a popular crowdfunding website",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "build": "webpack --mode production --watch",
     "start": "webpack-dev-server --mode development --open "
   },
@@ -30,7 +30,9 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.4.1",
     "style-loader": "^0.21.0",
+    "supertest": "^3.1.0",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.4"
@@ -38,6 +40,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "eslint-plugin-jest": "^21.18.0",
     "express": "^4.16.3",
     "node-sass": "^4.9.2",
     "nodemon": "^1.18.3",
