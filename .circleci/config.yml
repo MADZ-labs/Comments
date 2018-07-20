@@ -1,0 +1,9 @@
+version: 2
+jobs:
+  build:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: circleci/node:8.11.3
+    steps:
+      - checkout
+      - run: "npm install"
+      - run: "npm test"
