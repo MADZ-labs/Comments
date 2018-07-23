@@ -1,55 +1,55 @@
 const mongoose = require('mongoose');
+
+const Log = require('log');
+
+const log = new Log('info');
+
 mongoose.connect('mongodb://localhost/test');
 
 const faker = require('faker');
 
 const commentSchema = mongoose.Schema({
   avatar: String,
-  username: {
-    type: String,
-  },
+  username: { type: String },
   backer: String,
   comment: String,
   date: Number,
 });
 
-let Comment = mongoose.model('Comment', commentSchema);
+const Comment = mongoose.model('Comment', commentSchema);
 
+const randomBackerTier = () => {
+  const tiers = ['Backer', 'Superbacker'];
+  const random = Math.floor(Math.random * Math.floor(tiers.length))
+  return tiers[random];
+};
 
-let fakeComments = [];
-
-let generateComments = () => {
+const generateComments = () => {
+  const fakeComments = [];
   for (let i = 0; i < 21; i += 1) {
-    let comment = {
+    const comment = {
       avatar: faker.internet.avatar(),
-      username: faker.internet.userName() ,
+      username: faker.internet.userName(),
       backer: randomBackerTier(),
       comment: faker.lorem.sentences(),
-      date: ,
-
-    }
+      date: faker.date.recent(),
+    };
     fakeComments.push(comment);
   }
-}
+  return fakeComments;
+};
 
-let insertComments = (arr) => {
+const insertComments = (arr) => {
   Comment.insertMany(arr, (err) => {
-    if(err) {
-      // log.info('failed to store the data');
+    if (err) {
+      log.info('failed to store the data');
     } else {
-      // log.info('stored');
+      log.info('stored');
     }
-  })
-
-}
-
-let randomBackerTier = () => {
-  let tiers = ['Backer', 'Superbacker'];
-  let random = Math.floor(Math.random * Math.floor(tiers.length))
-  return tiers[random];
-}
-// userName
+  });
+};
 
 module.exports = {
-  generateComments
-}
+  generateComments,
+  insertComments,
+};
