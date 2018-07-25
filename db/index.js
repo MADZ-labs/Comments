@@ -25,14 +25,14 @@ const tiers = ['Backer', 'Superbacker'];
 const projects = [['Indie Movie', 100], ['Crypto Currency Project', 101], ['Hipster Notebook', 102]];
 
 const randomizer = (arr) => {
-  const random = Math.floor(Math.random * Math.floor(tiers.length));
+  const random = Math.floor(Math.random() * Math.floor(arr.length));
   return arr[random];
 };
 
 
 const generateComments = (cb) => {
-  const fakeComments = [];
   const randProj = randomizer(projects);
+  const fakeComments = [];
   for (let i = 0; i < 21; i += 1) {
     const comment = {
       avatar: faker.internet.avatar(),
