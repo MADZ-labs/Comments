@@ -6,7 +6,7 @@ describe('Test /', () => {
     const response = await request(app).get('/');
     expect(response.statusCode).toBe(200);
   });
-  it('should return hello world', async () => {
+  it('should return an object of data', async () => {
     const response = await request(app).get('/');
     expect(typeof response).toBe('object');
   });
