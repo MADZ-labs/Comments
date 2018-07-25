@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const Log = require('log');
 
 const log = new Log('info');
@@ -8,8 +9,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-app.get('/', (req, res) => res.send('Hello World!'));
+app.use(express.static(path.join(__dirname, '../client/dist/')));
 
 const port = 3003;
 if (process.env.NODE_ENV !== 'test') {
