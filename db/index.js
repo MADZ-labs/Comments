@@ -1,7 +1,6 @@
 import faker from 'faker';
 
 const mongoose = require('mongoose');
-
 const Log = require('log');
 
 const log = new Log('info');
