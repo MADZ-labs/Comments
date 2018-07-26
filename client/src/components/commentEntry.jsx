@@ -1,14 +1,20 @@
 import React from 'react';
+import moment from 'moment';
+// moment().format();
+
+const img =  {
+  height: '50px',
+  width: 'auto',
+};
 
 const CommentEntry = ({ comment }) => (
   <div>
     <div>
-      <img src={comment.avatar} alt="" />
+      <img style={img} src={comment.avatar} alt="" />
       <div>
         {comment.username}
-      </div>
-      <div>
-        {comment.backer}
+        {comment.backer} 
+        {moment(comment.date).startOf('hour').fromNow()}
       </div>
       <div>
         {comment.comment}
