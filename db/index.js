@@ -1,13 +1,10 @@
-import faker from 'faker';
-
+const faker = require('faker');
 const mongoose = require('mongoose');
-
 const Log = require('log');
 
 const log = new Log('info');
 
 mongoose.connect('mongodb://localhost/test');
-
 
 const commentSchema = mongoose.Schema({
   avatar: String,
@@ -27,12 +24,12 @@ const tiers = ['Backer', 'Superbacker'];
 const projects = [['Indie Movie', 100], ['Crypto Currency Project', 101], ['Hipster Notebook', 102]];
 
 const randomizer = (arr) => {
-  const random = Math.floor(Math.random * Math.floor(tiers.length))
+  const random = Math.floor(Math.random() * arr.length);
   return arr[random];
 };
 
 
-const generateComments = () => {
+const generateComments = (cb) => {
   const fakeComments = [];
   const randProj = randomizer(projects);
   for (let i = 0; i < 21; i += 1) {
@@ -49,7 +46,7 @@ const generateComments = () => {
     };
     fakeComments.push(comment);
   }
-  return fakeComments;
+  cb(null, fakeComments);
 };
 
 const insertComments = (arr) => {

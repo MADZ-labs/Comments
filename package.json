@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "comments component of a popular crowdfunding website",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "build": "webpack --mode production --watch",
     "start": "webpack-dev-server --mode development --open "
   },
