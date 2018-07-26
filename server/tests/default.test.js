@@ -3,11 +3,7 @@ const app = require('../server.js');
 
 describe('Test /', () => {
   it('should return status code of 200', async () => {
-    const response = await request(app).get('/');
+    const response = await request(app).get('/comments');
     expect(response.statusCode).toBe(200);
-  });
-  it('should return hello world', async () => {
-    const response = await request(app).get('/');
-    expect(response.text).toBe('Hello World!');
   });
 });
