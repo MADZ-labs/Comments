@@ -20,7 +20,6 @@ app.get('/comments', (req, res) => {
       log.info(err);
     } else {
       res.json(randComments);
-      res.end();
     }
   });
 });
