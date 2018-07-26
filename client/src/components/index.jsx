@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Comments from './Comments';
 
 import '../stylesheets/main.scss';
-/* eslint-env browser */
+
 export default class App extends Component {
   constructor(props) {
     super(props);
