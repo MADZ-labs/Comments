@@ -17,7 +17,7 @@ app.get('/comments', (req, res) => {
     if (err) {
       log.info(err);
     } else {
-      log.info(data);
+      res.json(data);
     }
   });
 });
