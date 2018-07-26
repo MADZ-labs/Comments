@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Log from 'log';
 import CommentEntry from './commentEntry';
+
+const log = new Log('info');
 
 export default class Comments extends Component {
   constructor(props) {
@@ -22,7 +25,7 @@ export default class Comments extends Component {
         });
       })
       .catch((err) => {
-        console.log(err);
+        log.info(err);
       });
   }
 

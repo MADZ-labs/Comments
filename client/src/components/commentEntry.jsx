@@ -9,8 +9,8 @@ const img = {
 const CommentEntry = ({ comment }) => (
   <div>
     <div>
-      <img style={img} src={comment.avatar} alt="" />
       <div>
+        <img style={img} src={comment.avatar} alt="" />
         {comment.username}
         {comment.backer} 
         {moment(comment.date).startOf('hour').fromNow()}
