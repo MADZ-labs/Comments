@@ -10,12 +10,15 @@ export default class Comments extends Component {
     };
   }
 
+  componentDidMount() {
+    this.getComments();
+  }
+
   getComments() {
     axios.get('/comments')
       .then((response) => {
-        console.log(response);
         this.setState({
-          comments: response,
+          comments: response.data,
         });
       })
       .catch((err) => {
@@ -31,7 +34,12 @@ export default class Comments extends Component {
           This is the comments section
         </h1>
         <div>
-          <CommentEntry />
+          {comments.map((comment, ind) =>
+            <CommentEntry 
+              key={ind} 
+              comment={comment} 
+            />
+          )}
         </div>
       </div>
     );

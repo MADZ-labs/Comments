@@ -1,10 +1,20 @@
 import React from 'react';
 
-const CommentEntry = () => (
+const CommentEntry = ({ comment }) => (
   <div>
     <div>
-      This is a single CommentEntry
+      <img src={comment.avatar} alt="" />
+      <div>
+        {comment.username}
+      </div>
+      <div>
+        {comment.backer}
+      </div>
+      <div>
+        {comment.comment}
+      </div>
     </div>
+
   </div>
 );
 
