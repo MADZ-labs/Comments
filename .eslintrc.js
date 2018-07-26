@@ -4,7 +4,8 @@ module.exports = {
         'no-console': 'off',
     },
     "env": {
-        "jest": true
+        "jest": true,
+        "browser": true,
     }
 };
 
