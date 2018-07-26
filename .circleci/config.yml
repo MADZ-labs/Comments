@@ -3,8 +3,11 @@ jobs:
   build:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
       - image: circleci/node:8.11.3
+      - image: circleci/mongo:v4.0.0
     steps:
       - checkout
       - run: "npm install"
-      # - run: "node server/server.js"
+      - run: 
+        command: "nodemon ./server/server.js"
+        background: true
       - run: "npm test"
