@@ -1,8 +1,7 @@
 import React from 'react';
 import moment from 'moment';
-// moment().format();
 
-const img =  {
+const img = {
   height: '50px',
   width: 'auto',
 };
