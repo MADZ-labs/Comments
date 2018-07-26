@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Comments from './Comments';
+
 import '../stylesheets/main.scss';
-/* eslint-env browser */
-class App extends React.Component {
+
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,12 +15,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Comment Section</h1>
+        <h1>Comment App</h1>
         <div>
-          goodbye
-        </div>
-        <div>
-          react
+          <Comments />
         </div>
       </div>
     );
