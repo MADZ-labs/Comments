@@ -8,6 +8,6 @@ jobs:
       - checkout
       - run: "npm install"
       - run: 
-          command: "nodemon ./server/server.js"
+          command: "node ./server/server.js"
           background: true
       - run: "npm test"
