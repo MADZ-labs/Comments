@@ -24,7 +24,7 @@ const tiers = ['Backer', 'Superbacker'];
 const projects = [['Indie Movie', 100], ['Crypto Currency Project', 101], ['Hipster Notebook', 102]];
 
 const randomizer = (arr) => {
-  const random = Math.floor(Math.random() * Math.floor(tiers.length))
+  const random = Math.floor(Math.random() * arr.length);
   return arr[random];
 };
 
