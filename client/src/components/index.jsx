@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
 import Comments from './Comments';
-
 import '../stylesheets/main.scss';
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: 1040px;
+  padding-right: 1.8rem !important;
+  padding-left: 1.8rem !important;
+  margin-right: auto;
+  margin-left: auto;
+`;
 
 export default class App extends Component {
   constructor(props) {
@@ -14,12 +24,12 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <section>
         <h1>Comment App</h1>
-        <div>
+        <Container className="container">
           <Comments />
-        </div>
-      </div>
+        </Container>
+      </section>
     );
   }
 }
