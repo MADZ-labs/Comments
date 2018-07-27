@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 const img = {
-  height: '50px',
+  height: '25px',
   width: 'auto',
 };
 

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Log from 'log';
 import CommentEntry from './commentEntry';
-
-const log = new Log('info');
 
 export default class Comments extends Component {
   constructor(props) {
@@ -25,7 +22,6 @@ export default class Comments extends Component {
         });
       })
       .catch((err) => {
-        log.info(err);
       });
   }
 
@@ -37,12 +33,9 @@ export default class Comments extends Component {
           This is the comments section
         </h1>
         <div>
-          {comments.map((comment, ind) =>
-            <CommentEntry 
-              key={ind} 
-              comment={comment} 
-            />
-          )}
+          {comments.map((comment, ind) => {
+            return <CommentEntry key={ind} comment={comment} />;
+          })}
         </div>
       </div>
     );
