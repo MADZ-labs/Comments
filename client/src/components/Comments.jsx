@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import CommentEntry from './commentEntry';
+
+const AllComments = styled.div`
+  width: 66.6666667%;
+  float: left;
+`;
 
 export default class Comments extends Component {
   constructor(props) {
@@ -28,16 +34,11 @@ export default class Comments extends Component {
   render() {
     const { comments } = this.state;
     return (
-      <div>
-        <h1>
-          This is the comments section
-        </h1>
-        <div>
-          {comments.map((comment, ind) => {
-            return <CommentEntry key={ind} comment={comment} />;
-          })}
-        </div>
-      </div>
+      <AllComments className="comment-section">
+        {comments.map((comment, ind) => (
+          <CommentEntry key={ind} comment={comment} />
+        ))}
+      </AllComments>
     );
   }
 }
