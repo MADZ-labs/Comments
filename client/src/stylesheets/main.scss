@@ -1,7 +1,13 @@
-$font-stack:    Helvetica, sans-serif;
+$font-stack: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $primary-color: rgb(196, 44, 44);
+
+html {
+  font-size: 62.5%;
+  font-weight: 400;
+}
 
 body {
   font: 100% $font-stack;
-  color: $primary-color;
+  font-size: 1.4rem;
+  line-height: 1.5;
 }
