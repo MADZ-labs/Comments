@@ -65,7 +65,7 @@ export default class Comments extends Component {
           <FAQ>
             Use this space to cheer the creator along, and talk to your fellow backers.
             <div>
-              <br/>
+              <br />
               Have a question?
             </div>
             <div>
