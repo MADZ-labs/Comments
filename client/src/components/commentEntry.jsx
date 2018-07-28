@@ -3,10 +3,7 @@ import moment from 'moment';
 import styled from 'styled-components';
 
 const Comment = styled.div`
-  padding-top: 1.8rem !important;
-  padding-bottom: 1.8rem !important;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 1.8rem 20px 1.8rem
   margin-bottom: 1.8rem;
 `;
 
@@ -39,10 +36,7 @@ const Image = styled.img`
 
 const Date = styled.span`
   font-size: 12px;
-  margin-bottom: 10px;
   color: #3D3D66;
-  top: 12px;
-  right: 10px;
   margin-left: 10px;
 `;
 
