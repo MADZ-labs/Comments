@@ -12,14 +12,14 @@ const InnerSec = styled.div`
 `;
 
 const AllComments = styled.div`
-  width: 66.6666667%;
+  width: 66.7%;
   float: left;
   padding: 0px 1.8rem, 1.8rem;
   box-sizing: border-box;
 `;
 
 const FAQ = styled.div`
-  width: 33.333333%;
+  width: 33.3%;
   float: right;
   box-sizing: border-box;
   border-left: 0.3rem solid #DCDEDD;
@@ -39,15 +39,20 @@ export default class Comments extends Component {
     super(props);
     this.state = {
       comments: [],
+      project: {
+        projectName: 'Hipster Notebook',
+        projectID: 102,
+      },
     };
   }
 
   componentDidMount() {
-    this.getComments();
+    const { project } = this.state;
+    this.getComments(project);
   }
 
-  getComments() {
-    axios.get('/comments')
+  getComments({ projectName, projectID }) {
+    axios.get(`/${projectName}/${projectID}/section/comments`)
       .then((response) => {
         this.setState({
           comments: response.data,
