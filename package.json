@@ -44,6 +44,7 @@
     "eslint-plugin-jest": "^21.18.0",
     "express": "^4.16.3",
     "faker": "^4.1.0",
+    "hoek": "^5.0.3",
     "log": "^1.4.0",
     "moment": "^2.22.2",
     "mongodb": "^3.1.1",
