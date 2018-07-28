@@ -31,7 +31,10 @@ module.exports = {
     ]
 
   },
-  // plugins: [htmlPlugin],
+  devServer: {
+    contentBase: "./client/dist",
+    port: 3003,
+  },
   resolve: {
     extensions: ['.jsx', '.css', '.js', '.json']
   },
