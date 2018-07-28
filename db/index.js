@@ -2,9 +2,10 @@ const faker = require('faker');
 const mongoose = require('mongoose');
 const Log = require('log');
 
+mongoose.Promise = global.Promise;
 const log = new Log('info');
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost:27017/comments', { useNewUrlParser: true });
 
 const commentSchema = mongoose.Schema({
   avatar: String,
@@ -28,11 +29,26 @@ const randomizer = (arr) => {
   return arr[random];
 };
 
+const resetData = () => {
+  Comment.remove({}, (err) => {
+    log.info('collection removed');
+  });
+};
 
-const generateComments = (cb) => {
+const insertComments = (arr) => {
+  Comment.insertMany(arr, (err) => {
+    if (err) {
+      log.info('failed to store the data');
+    } else {
+      log.info('stored');
+    }
+  });
+};
+
+const generateComments = () => {
   const fakeComments = [];
-  const randProj = randomizer(projects);
-  for (let i = 0; i < 21; i += 1) {
+  for (let i = 0; i < 100; i += 1) {
+    const randProj = randomizer(projects);
     const comment = {
       avatar: faker.internet.avatar(),
       username: faker.internet.userName(),
@@ -46,20 +62,23 @@ const generateComments = (cb) => {
     };
     fakeComments.push(comment);
   }
-  cb(null, fakeComments);
+  if (Comment.count({}) < 99) {
+    insertComments(fakeComments);
+  }
 };
 
-const insertComments = (arr) => {
-  Comment.insertMany(arr, (err) => {
-    if (err) {
-      log.info('failed to store the data');
-    } else {
-      log.info('stored');
-    }
-  });
+const retrieveComments = (params, cb) => {
+  Comment.find({ project: params }).limit(30).sort({ date: -1 })
+    .exec((err, data) => {
+      cb(null, data);
+    });
 };
+
+mongoose.connection.close();
 
 module.exports = {
   generateComments,
   insertComments,
+  retrieveComments,
+  resetData,
 };

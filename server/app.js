@@ -14,12 +14,15 @@ app.use(express.static(path.join(__dirname, '../client/dist/')));
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
-app.get('/comments', (req, res) => {
-  db.generateComments((err, randComments) => {
+app.get('/:projectName/:projectID/section/comments', (req, res) => {
+  const { params } = req;
+  params.projectID = Number(params.projectID);
+  db.generateComments();
+  db.retrieveComments(params, (err, comments) => {
     if (err) {
       log.info(err);
     } else {
-      res.json(randComments);
+      res.json(comments);
     }
   });
 });
