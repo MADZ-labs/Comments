@@ -1,11 +1,11 @@
 module.exports = {
-    "extends": "airbnb",
-    rules: {
-        'no-console': 'off',
-    },
-    "env": {
-        "jest": true,
-        "browser": true,
-    }
+  extends: "airbnb",
+  plugins: ["react", "jsx-ally", "import"],
+  rules: {
+    "no-console": "off"
+  },
+  env: {
+    jest: true,
+    browser: true
+  }
 };
-
