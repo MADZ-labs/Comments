@@ -4,6 +4,7 @@
   "description": "comments component of a popular crowdfunding website",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "build": "webpack -d --watch",
     "start": "webpack-dev-server --mode development --open "
   },
@@ -25,6 +26,8 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
@@ -57,5 +60,11 @@
     "react-dom": "^16.4.1",
     "sass-loader": "^7.0.3",
     "styled-components": "^3.3.3"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup/setupEnzyme.js",
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/setup/"
+    ]
   }
 }
