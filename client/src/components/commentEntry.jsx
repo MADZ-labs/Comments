@@ -1,6 +1,6 @@
-import React from 'react';
-import moment from 'moment';
-import styled from 'styled-components';
+import React from "react";
+import moment from "moment";
+import styled from "styled-components";
 
 const Comment = styled.div`
   padding: 1.8rem 20px 1.8rem
@@ -21,7 +21,7 @@ const Backer = styled.span`
   padding: 5px 7px;
   background-color: #037362;
   border-radius: 0;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-left: 5px;
   font-size: 12px !important;
   line-height: 1.1em;
@@ -36,7 +36,7 @@ const Image = styled.img`
 
 const Date = styled.span`
   font-size: 12px;
-  color: #3D3D66;
+  color: #3d3d66;
   margin-left: 10px;
 `;
 
@@ -54,19 +54,15 @@ const CommentEntry = ({ comment }) => (
     </div>
     <MainComment>
       <div>
-        <Author>
-          {comment.username}
-        </Author>
-        <Backer>
-          {comment.backer}
-        </Backer>
+        <Author>{comment.username}</Author>
+        <Backer>{comment.backer}</Backer>
         <Date>
-          {moment(comment.date).startOf('hour').fromNow()}
+          {moment(comment.date)
+            .startOf("hour")
+            .fromNow()}
         </Date>
       </div>
-      <Text>
-        {comment.comment}
-      </Text>
+      <Text>{comment.comment}</Text>
     </MainComment>
   </Comment>
 );

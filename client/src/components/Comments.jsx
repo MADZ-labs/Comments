@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import styled from 'styled-components';
-import CommentEntry from './commentEntry';
+import React, { Component } from "react";
+import axios from "axios";
+import styled from "styled-components";
+import CommentEntry from "./commentEntry";
 
 const Section = styled.div`
   margin-right: -1.8rem;
@@ -22,14 +22,14 @@ const FAQ = styled.div`
   width: 33.3%;
   float: right;
   box-sizing: border-box;
-  border-left: 0.3rem solid #DCDEDD;
+  border-left: 0.3rem solid #dcdedd;
   padding: 1.2rem 0rem 1.2rem 1.8rem;
 `;
 
 const CommentBox = styled.div`
   margin-right: 20px;
   margin-bottom: 4.2rem;
-  background: #F0F0F0;
+  background: #f0f0f0;
   text-align: center;
   padding: 20px;
 `;
@@ -40,9 +40,9 @@ export default class Comments extends Component {
     this.state = {
       comments: [],
       project: {
-        projectName: 'Hipster Notebook',
-        projectID: 102,
-      },
+        projectName: "Hipster Notebook",
+        projectID: 102
+      }
     };
   }
 
@@ -52,14 +52,14 @@ export default class Comments extends Component {
   }
 
   getComments({ projectName, projectID }) {
-    axios.get(`/${projectName}/${projectID}/section/comments`)
-      .then((response) => {
+    axios
+      .get(`/${projectName}/${projectID}/section/comments`)
+      .then(response => {
         this.setState({
-          comments: response.data,
+          comments: response.data
         });
       })
-      .catch((err) => {
-      });
+      .catch(err => {});
   }
 
   render() {
@@ -68,22 +68,19 @@ export default class Comments extends Component {
       <Section>
         <InnerSec className="inner-sec">
           <FAQ>
-            Use this space to cheer the creator along, and talk to your fellow backers.
+            Use this space to cheer the creator along, and talk to your fellow
+            backers.
             <div>
               <br />
               Have a question?
             </div>
             <div>
-              <a href="http://">
-              Check out the FAQ
-              </a>
+              <a href="http://">Check out the FAQ</a>
             </div>
           </FAQ>
           <AllComments className="comment-section">
             <CommentBox>
-              <div>
-                Only backers can post comments.
-              </div>
+              <div>Only backers can post comments.</div>
             </CommentBox>
             {comments.map((comment, ind) => (
               <CommentEntry key={ind} comment={comment} />
