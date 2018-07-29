@@ -74,8 +74,6 @@ const retrieveComments = (params, cb) => {
     });
 };
 
-mongoose.connection.close();
-
 module.exports = {
   generateComments,
   insertComments,
