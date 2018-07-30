@@ -1,6 +1,6 @@
-import React from "react";
-import moment from "moment";
-import styled from "styled-components";
+import React from 'react';
+import moment from 'moment';
+import styled from 'styled-components';
 
 const Comment = styled.div`
   padding: 1.8rem 20px 1.8rem
@@ -50,16 +50,14 @@ const Text = styled.p`
 const CommentEntry = ({ comment }) => (
   <Comment>
     <div>
-      <Image src={comment.avatar} alt="" />
+      <Image src={comment.avatar} alt='' />
     </div>
     <MainComment>
       <div>
         <Author>{comment.username}</Author>
         <Backer>{comment.backer}</Backer>
         <Date>
-          {moment(comment.date)
-            .startOf("hour")
-            .fromNow()}
+          {moment(comment.date).startOf('hour').fromNow()}
         </Date>
       </div>
       <Text>{comment.comment}</Text>

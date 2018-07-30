@@ -1,5 +1,5 @@
-import React from "react";
-import { shallow, mount, render } from "enzyme";
+import React from 'react';
+import { shallow, mount, render } from 'enzyme';
 import CommentEntry from '../../client/src/components/commentEntry'
 
 const comment = {

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import axios from "axios";
-import styled from "styled-components";
-import CommentEntry from "./commentEntry";
+import React, { Component } from 'react';
+import axios from 'axios';
+import styled from 'styled-components';
+import CommentEntry from './commentEntry';
 
 const Section = styled.div`
   margin-right: -1.8rem;
@@ -40,7 +40,7 @@ export default class Comments extends Component {
     this.state = {
       comments: [],
       project: {
-        projectName: "Hipster Notebook",
+        projectName: 'Hipster Notebook',
         projectID: 102
       }
     };
@@ -66,7 +66,7 @@ export default class Comments extends Component {
     const { comments } = this.state;
     return (
       <Section>
-        <InnerSec className="inner-sec">
+        <InnerSec className='inner-sec'>
           <FAQ>
             Use this space to cheer the creator along, and talk to your fellow
             backers.
@@ -75,15 +75,15 @@ export default class Comments extends Component {
               Have a question?
             </div>
             <div>
-              <a href="http://">Check out the FAQ</a>
+              <a href='http://'>Check out the FAQ</a>
             </div>
           </FAQ>
-          <AllComments className="comment-section">
+          <AllComments className='comment-section'>
             <CommentBox>
               <div>Only backers can post comments.</div>
             </CommentBox>
             {comments.map((comment, ind) => (
-              <CommentEntry className="comment" key={ind} comment={comment} />
+              <CommentEntry className='comment' key={ind} comment={comment} />
             ))}
           </AllComments>
         </InnerSec>

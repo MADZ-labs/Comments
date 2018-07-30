@@ -1,7 +1,7 @@
-import React from "react";
-import { shallow, mount, render } from "enzyme";
+import React from 'react';
+import { shallow, mount, render } from 'enzyme';
 import Comments from '../../client/src/components/Comments'
-import sinon from "sinon";
+import sinon from 'sinon';
 
 describe('<Comments />', () => {
   let wrapper;
