@@ -79,10 +79,10 @@ CommentEntry.propTypes = {
     backer: PropTypes.string,
     comment: PropTypes.string,
     date: PropTypes.number,
-    project: {
+    project: PropTypes.shape({
       projectName: PropTypes.string,
       projectID: Number,
-    },
+    }),
   }).isRequired,
 };
 
