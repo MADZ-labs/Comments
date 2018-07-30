@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "comments component of a popular crowdfunding website",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
     "build": "webpack -d --watch",
     "start": "webpack-dev-server --mode development --open "
@@ -60,6 +60,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "sass-loader": "^7.0.3",
+    "sinon": "^6.1.4",
     "styled-components": "^3.3.3"
   },
   "jest": {
