@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Comments from './Comments';
 import '../stylesheets/main.scss';
@@ -26,7 +25,7 @@ export default class App extends Component {
     return (
       <section>
         <h1>Comment App</h1>
-        <Container className="container">
+        <Container className='container'>
           <Comments />
         </Container>
       </section>
@@ -34,4 +33,3 @@ export default class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));

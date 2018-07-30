@@ -21,7 +21,7 @@ const Backer = styled.span`
   padding: 5px 7px;
   background-color: #037362;
   border-radius: 0;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-left: 5px;
   font-size: 12px !important;
   line-height: 1.1em;
@@ -36,7 +36,7 @@ const Image = styled.img`
 
 const Date = styled.span`
   font-size: 12px;
-  color: #3D3D66;
+  color: #3d3d66;
   margin-left: 10px;
 `;
 
@@ -50,23 +50,17 @@ const Text = styled.p`
 const CommentEntry = ({ comment }) => (
   <Comment>
     <div>
-      <Image src={comment.avatar} alt="" />
+      <Image src={comment.avatar} alt='' />
     </div>
     <MainComment>
       <div>
-        <Author>
-          {comment.username}
-        </Author>
-        <Backer>
-          {comment.backer}
-        </Backer>
+        <Author>{comment.username}</Author>
+        <Backer>{comment.backer}</Backer>
         <Date>
           {moment(comment.date).startOf('hour').fromNow()}
         </Date>
       </div>
-      <Text>
-        {comment.comment}
-      </Text>
+      <Text>{comment.comment}</Text>
     </MainComment>
   </Comment>
 );
