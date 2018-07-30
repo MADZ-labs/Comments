@@ -17,7 +17,6 @@ describe('Server Test', () => {
   });
 
   it('should respond with the correct content type', async () => {
-
     const response = await request(app).get('/:projectName/:projectID/section/comments');
     console.log(response.header['content-type']);
 
