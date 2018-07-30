@@ -1,9 +1,14 @@
 import React from "react";
-import { shallow, mount, render } from "enzyme";
+import { shallow, mount } from "enzyme";
 import App from '../../client/src/components/App'
 
-// describe("Index Component", () => {
-//   it("should render without throwing an error", () => {
-    
-//   });
-// });
+jest.mock('react-dom');
+
+describe("App Component", () => {
+  let wrapper;
+  beforeEach(() => { wrapper = shallow(<App/>); });
+
+  it("should render without throwing an error", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});
