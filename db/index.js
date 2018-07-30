@@ -75,6 +75,7 @@ const retrieveComments = (params, cb) => {
 };
 
 module.exports = {
+  Comment,
   generateComments,
   insertComments,
   retrieveComments,
