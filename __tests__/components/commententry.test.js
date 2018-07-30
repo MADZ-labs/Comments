@@ -12,7 +12,7 @@ const comment = {
 
 describe('<CommentEntry />', () => {
   let wrapper;
-  beforeEach(() => { wrapper = mount(<CommentEntry comment={comment}/>); });
+  beforeEach(() => { wrapper = mount(<CommentEntry comment={comment} />); });
 
   it('should render without error', () => {
     expect(wrapper).toHaveLength(1);

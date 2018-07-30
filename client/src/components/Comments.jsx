@@ -41,8 +41,8 @@ export default class Comments extends Component {
       comments: [],
       project: {
         projectName: 'Hipster Notebook',
-        projectID: 102
-      }
+        projectID: 102,
+      },
     };
   }
 
@@ -54,19 +54,21 @@ export default class Comments extends Component {
   getComments({ projectName, projectID }) {
     axios
       .get(`/${projectName}/${projectID}/section/comments`)
-      .then(response => {
+      .then((response) => {
         this.setState({
-          comments: response.data
+          comments: response.data,
         });
       })
-      .catch(err => {});
+      .catch((err) => {
+
+      });
   }
 
   render() {
     const { comments } = this.state;
     return (
       <Section>
-        <InnerSec className='inner-sec'>
+        <InnerSec className="inner-sec">
           <FAQ>
             Use this space to cheer the creator along, and talk to your fellow
             backers.
@@ -75,15 +77,19 @@ export default class Comments extends Component {
               Have a question?
             </div>
             <div>
-              <a href='http://'>Check out the FAQ</a>
+              <a href="http://">
+                Check out the FAQ
+              </a>
             </div>
           </FAQ>
-          <AllComments className='comment-section'>
+          <AllComments className="comment-section">
             <CommentBox>
-              <div>Only backers can post comments.</div>
+              <div>
+                Only backers can post comments.
+              </div>
             </CommentBox>
             {comments.map((comment, ind) => (
-              <CommentEntry className='comment' key={ind} comment={comment} />
+              <CommentEntry className="comment" key={ind} comment={comment} />
             ))}
           </AllComments>
         </InnerSec>
