@@ -83,7 +83,7 @@ export default class Comments extends Component {
               <div>Only backers can post comments.</div>
             </CommentBox>
             {comments.map((comment, ind) => (
-              <CommentEntry key={ind} comment={comment} />
+              <CommentEntry className="comment" key={ind} comment={comment} />
             ))}
           </AllComments>
         </InnerSec>
