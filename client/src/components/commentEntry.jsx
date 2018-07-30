@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Comment = styled.div`
   padding: 1.8rem 20px 1.8rem
@@ -50,19 +51,39 @@ const Text = styled.p`
 const CommentEntry = ({ comment }) => (
   <Comment>
     <div>
-      <Image src={comment.avatar} alt='' />
+      <Image src={comment.avatar} alt="" />
     </div>
     <MainComment>
       <div>
-        <Author>{comment.username}</Author>
-        <Backer>{comment.backer}</Backer>
+        <Author>
+          {comment.username}
+        </Author>
+        <Backer>
+          {comment.backer}
+        </Backer>
         <Date>
           {moment(comment.date).startOf('hour').fromNow()}
         </Date>
       </div>
-      <Text>{comment.comment}</Text>
+      <Text>
+        {comment.comment}
+      </Text>
     </MainComment>
   </Comment>
 );
+
+CommentEntry.propTypes = {
+  comment: PropTypes.shape({
+    avatar: PropTypes.string,
+    username: PropTypes.string,
+    backer: PropTypes.string,
+    comment: PropTypes.string,
+    date: PropTypes.number,
+    project: {
+      projectName: PropTypes.string,
+      projectID: Number,
+    },
+  }).isRequired,
+};
 
 export default CommentEntry;
