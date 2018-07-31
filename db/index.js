@@ -62,9 +62,7 @@ const generateComments = () => {
     };
     fakeComments.push(comment);
   }
-  if (Comment.count({}) < 99) {
-    insertComments(fakeComments);
-  }
+  insertComments(fakeComments);
 };
 
 const retrieveComments = (params, cb) => {
