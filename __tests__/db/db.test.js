@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
 import db from '../../db/index';
+
+const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 

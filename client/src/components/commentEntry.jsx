@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -48,29 +48,84 @@ const Text = styled.p`
   font-size: 14px;
 `;
 
-const CommentEntry = ({ comment }) => (
-  <Comment>
-    <div>
-      <Image src={comment.avatar} alt="" />
-    </div>
-    <MainComment>
-      <div>
-        <Author>
-          {comment.username}
-        </Author>
-        <Backer>
-          {comment.backer}
-        </Backer>
-        <Date>
-          {moment(comment.date).startOf('hour').fromNow()}
-        </Date>
-      </div>
-      <Text>
-        {comment.comment}
-      </Text>
-    </MainComment>
-  </Comment>
-);
+const RelDiv = styled.div`
+  position: relative;
+  left: 30px;
+  bottom: 55px;
+`;
+
+const BackerDiv = styled.div`
+  display: inline-block;
+  position: absolute;
+  background-color: #000;
+  color: #FFF;
+  max-width: 190px;
+  padding: 5px 8px 4px 8px;
+  text-align: center;
+  opacity: 0.8;
+  border-radius: 3px; 
+  font-size: 12px;
+`;
+
+export default class CommentEntry extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayed: false,
+    };
+    this.hoverOn = this.hoverOn.bind(this);
+    this.hoverOff = this.hoverOff.bind(this);
+  }
+
+  hoverOn() {
+    this.setState({
+      displayed: true,
+    });
+  }
+
+  hoverOff() {
+    this.setState({
+      displayed: false,
+    });
+  }
+
+  render() {
+    let backerDiv;
+    const { comment } = this.props;
+    const { displayed } = this.state;
+
+    if (displayed) {
+      backerDiv = <BackerDiv ><div>Super! This backer has supported a lot projects.</div></BackerDiv>;
+    }
+
+    return (
+      <Comment>
+        <RelDiv>
+          {backerDiv}
+        </RelDiv>
+        <div>
+          <Image src={comment.avatar} alt="" />
+        </div>
+        <MainComment>
+          <div>
+            <Author>
+              {comment.username}
+            </Author>
+            <Backer onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}>
+              {comment.backer}
+            </Backer>
+            <Date>
+              {moment(comment.date).startOf('hour').fromNow()}
+            </Date>
+          </div>
+          <Text>
+            {comment.comment}
+          </Text>
+        </MainComment>
+      </Comment>
+    );
+  }
+}
 
 CommentEntry.propTypes = {
   comment: PropTypes.shape({
@@ -81,9 +136,7 @@ CommentEntry.propTypes = {
     date: PropTypes.number,
     project: PropTypes.shape({
       projectName: PropTypes.string,
-      projectID: Number,
+      projectID: PropTypes.number,
     }),
   }).isRequired,
 };
-
-export default CommentEntry;
