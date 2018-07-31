@@ -3,4 +3,5 @@ node_modules
 bundle.js
 coverage
 .ds_store
-coverage
+/coverage.data
+/coverage/

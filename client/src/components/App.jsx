@@ -24,12 +24,10 @@ export default class App extends Component {
   render() {
     return (
       <section>
-        <h1>Comment App</h1>
-        <Container className='container'>
+        <Container className="container">
           <Comments />
         </Container>
       </section>
     );
   }
 }
-
