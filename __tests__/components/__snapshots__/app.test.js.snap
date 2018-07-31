@@ -17,31 +17,49 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <h1>
-          Comment App
-        </h1>,
-        <styled.div
+      "children": <styled.div
+        className="container"
+      >
+        <Comments />
+      </styled.div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <Comments />,
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <styled.div
           className="container"
         >
           <Comments />
         </styled.div>,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Comment App",
-        },
-        "ref": null,
-        "rendered": "Comment App",
-        "type": "h1",
       },
-      Object {
+      "ref": null,
+      "rendered": Object {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
@@ -61,60 +79,6 @@ ShallowWrapper {
         },
         "type": [Function],
       },
-    ],
-    "type": "section",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <h1>
-            Comment App
-          </h1>,
-          <styled.div
-            className="container"
-          >
-            <Comments />
-          </styled.div>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Comment App",
-          },
-          "ref": null,
-          "rendered": "Comment App",
-          "type": "h1",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": <Comments />,
-            "className": "container",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-      ],
       "type": "section",
     },
   ],
