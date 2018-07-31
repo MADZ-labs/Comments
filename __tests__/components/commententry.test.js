@@ -8,7 +8,7 @@ const comment = {
   backer: 'backer',
   date: 'date',
   comment: 'comment',
-}
+};
 
 describe('<CommentEntry />', () => {
   let wrapper;
