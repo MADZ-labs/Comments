@@ -2,10 +2,9 @@ const faker = require('faker');
 const mongoose = require('mongoose');
 const Log = require('log');
 
-mongoose.Promise = global.Promise;
 const log = new Log('info');
 
-mongoose.connect('mongodb://localhost:27017/comments', { useNewUrlParser: true });
+mongoose.connect('mongodb://database:27017/comments', { useNewUrlParser: true });
 
 const commentSchema = mongoose.Schema({
   avatar: String,

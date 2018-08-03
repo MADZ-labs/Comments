@@ -4,21 +4,29 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Comment = styled.div`
-  padding: 1.8rem 20px 1.8rem
+  &&& {
+    padding: 1.8rem 20px 1.8rem
   margin-bottom: 1.8rem;
+  }
 `;
 
 const MainComment = styled.div`
+  &&& {
   padding-top: 5px;
   padding-left: 1.8rem;
   margin-left: 1.8rem;
+}
 `;
 
 const Author = styled.span`
-  font-weight: bold;
+  &&& {
+
+    font-weight: bold;
+  }
 `;
 
 const Backer = styled.span`
+&&& {
   padding: 5px 7px;
   background-color: #037362;
   border-radius: 0;
@@ -26,35 +34,48 @@ const Backer = styled.span`
   margin-left: 5px;
   font-size: 12px !important;
   line-height: 1.1em;
+}
 `;
 
 const Image = styled.img`
+&&& {
   height: 30px;
   width: auto;
   float: left;
   border-radius: 50%;
+}
 `;
 
 const Date = styled.span`
+&&& {
   font-size: 12px;
   color: #3d3d66;
   margin-left: 10px;
+}
 `;
 
 const Text = styled.p`
+&&& {
+
   word-wrap: break-word;
   margin-bottom: 5px;
   color: #020621;
   font-size: 14px;
+}
 `;
 
 const RelDiv = styled.div`
+&&& {
+
   position: relative;
   left: 30px;
   bottom: 55px;
+}
 `;
 
 const BackerDiv = styled.div`
+&&& {
+
   display: inline-block;
   position: absolute;
   background-color: #000;
@@ -65,6 +86,7 @@ const BackerDiv = styled.div`
   opacity: 0.8;
   border-radius: 3px; 
   font-size: 12px;
+}
 `;
 
 export default class CommentEntry extends Component {
