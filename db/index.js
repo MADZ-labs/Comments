@@ -18,15 +18,20 @@ const commentSchema = mongoose.Schema({
   },
 });
 
-const Comment = mongoose.model('Comment', commentSchema);
+const randomizer = (ele) => {
+  const randIdx = Math.floor(Math.random() * ele.length);
+  const randNum = Math.floor(Math.random() * ele + 1);
 
-const tiers = ['Backer', 'Superbacker'];
-const projects = [['Indie Movie', 100], ['Crypto Currency Project', 101], ['Hipster Notebook', 102]];
-
-const randomizer = (arr) => {
-  const random = Math.floor(Math.random() * arr.length);
-  return arr[random];
+  if (Array.isArray(ele)) {
+    return ele[randIdx];
+  }
+  return randNum;
 };
+
+const Comment = mongoose.model('Comment', commentSchema);
+const creators = randomizer(6);
+const tiers = ['Backer', 'Superbacker', `${creators}-time creator`];
+const projects = [['Indie Movie', 100], ['Crypto Currency Project', 101], ['Hipster Notebook', 102]];
 
 const resetData = () => {
   Comment.remove({}, (err) => {
