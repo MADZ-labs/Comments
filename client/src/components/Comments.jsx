@@ -5,7 +5,6 @@ import CommentEntry from './commentEntry';
 
 const Section = styled.div`
 &&& {
-
   margin-right: -1.8rem;
   margin-left: -1.8rem;
 }
@@ -13,13 +12,11 @@ const Section = styled.div`
 const InnerSec = styled.div`
 &&& {
   padding-left: 1.8rem;
-
 }
 `;
 
 const AllComments = styled.div`
 &&& {
-
   width: 66.7%;
   float: left;
   padding: 0px 1.8rem, 1.8rem;
@@ -29,7 +26,6 @@ const AllComments = styled.div`
 
 const FAQ = styled.div`
 &&& {
-
   width: 33.3%;
   float: right;
   box-sizing: border-box;
@@ -40,7 +36,6 @@ const FAQ = styled.div`
 
 const CommentBox = styled.div`
 &&& {
-
   margin-right: 20px;
   margin-bottom: 4.2rem;
   background: #f0f0f0;
