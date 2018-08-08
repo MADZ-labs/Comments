@@ -17,7 +17,9 @@ app.get('/', (req, res) => res.send('Hello World!'));
 app.get('/:projectName/:projectID/section/comments', (req, res) => {
   const { params } = req;
   params.projectID = Number(params.projectID);
-  db.generateComments();
+  const projects = db.generateProjects();
+  console.log(projects);
+  db.generateComments(projects);
   db.retrieveComments(params, (err, comments) => {
     if (err) {
       log.info(err);
@@ -25,6 +27,18 @@ app.get('/:projectName/:projectID/section/comments', (req, res) => {
       res.json(comments);
     }
   });
+});
+
+app.post('/:projectName/:projectID/section/comments', (req, res) => {
+  res.send('POST request to the homepage')
+});
+
+app.put('/:projectName/:projectID/section/comments', (req, res) => {
+  res.send('PUT request to the homepage')
+});
+
+app.delete('/:projectName/:projectID/section/comments', (req, res) => {
+  res.send('DELETE request to the homepage')
 });
 
 module.exports = app;
