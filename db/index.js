@@ -4,7 +4,7 @@ const Log = require('log');
 
 const log = new Log('info');
 
-mongoose.connect('mongodb://database:27017/comments', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/comments', { useNewUrlParser: true });
 
 const commentSchema = mongoose.Schema({
   avatar: String,
@@ -31,6 +31,15 @@ const randomizer = (ele) => {
 const Comment = mongoose.model('Comment', commentSchema);
 const creators = randomizer(6);
 const tiers = ['Backer', 'Superbacker', `${creators}-time creator`];
+
+const generateProjects = () => {
+  const projects = [];
+  for (let i = 100; i < 5100; i++) {
+    projects.push([faker.company.companyName(), i]);
+  }
+  return projects;
+}
+
 const projects = [['Indie Movie', 100], ['Crypto Currency Project', 101], ['Hipster Notebook', 102]];
 
 const resetData = () => {
@@ -49,16 +58,16 @@ const insertComments = (arr) => {
   });
 };
 
-const generateComments = () => {
+const generateComments = (projects) => {
   const fakeComments = [];
-  for (let i = 0; i < 100; i += 1) {
+  for (let i = 0; i < 1000; i += 1) {
     const randProj = randomizer(projects);
     const comment = {
       avatar: faker.internet.avatar(),
       username: faker.internet.userName(),
       backer: randomizer(tiers),
       comment: faker.lorem.sentences(),
-      date: faker.date.recent(),
+      date: faker.date.past(1),
       project: {
         projectName: randProj[0],
         projectID: randProj[1],
@@ -66,6 +75,7 @@ const generateComments = () => {
     };
     fakeComments.push(comment);
   }
+  console.log(fakeComments);
   insertComments(fakeComments);
 };
 
@@ -82,4 +92,5 @@ module.exports = {
   insertComments,
   retrieveComments,
   resetData,
+  generateProjects
 };
