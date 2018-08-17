@@ -40,7 +40,7 @@ const generateProjects = () => {
   return projects;
 }
 
-// const projects = [['Indie Movie', 100], ['Crypto Currency Project', 101], ['Hipster Notebook', 102]];
+const projects = [['Indie Movie', 100], ['Crypto Currency Project', 101], ['Hipster Notebook', 102]];
 
 const resetData = () => {
   Comment.remove({}, (err) => {

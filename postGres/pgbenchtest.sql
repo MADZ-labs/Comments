@@ -1,0 +1,12 @@
+SELECT avatar, username, backer, comment, date_prod FROM comments WHERE comments.projects_id = 10000000;
+SELECT avatar, username, backer, comment, date_prod FROM comments WHERE comments.projects_id = 8747860;
+SELECT avatar, username, backer, comment, date_prod FROM comments WHERE comments.projects_id = 9628153;
+INSERT INTO comments (avatar, username, backer, comment, date_prod, projects_id) VALUES ('https://s3-us-west-1.amazonaws.com/pley-land/10.jpg', 'KassandraC', 'Backer', 'Lorem Ipsum', '2018-06-06T23:33:20.811Z', 10000000);
+INSERT INTO comments (avatar, username, backer, comment, date_prod, projects_id) VALUES ('https://s3-us-west-1.amazonaws.com/pley-land/10.jpg', 'KassandraC', 'Backer', 'Lorem Ipsum', '2018-06-06T23:33:20.811Z', 8747860);
+INSERT INTO comments (avatar, username, backer, comment, date_prod, projects_id) VALUES ('https://s3-us-west-1.amazonaws.com/pley-land/10.jpg', 'KassandraC', 'Backer', 'Lorem Ipsum', '2018-06-06T23:33:20.811Z', 9628153);
+UPDATE comments SET (avatar, backer, comment, date_prod) = ('https://s3-us-west-1.amazonaws.com/pley-land/15.jpg', '1-time creator', 'Lorem Ipsum', '2018-06-06T23:33:20.811Z') WHERE projects_id = 10000000 AND username = 'KassandraC';
+UPDATE comments SET (avatar, backer, comment, date_prod) = ('https://s3-us-west-1.amazonaws.com/pley-land/15.jpg', '1-time creator', 'Lorem Ipsum', '2018-06-06T23:33:20.811Z') WHERE projects_id = 8747860 AND username = 'KassandraC';
+UPDATE comments SET (avatar, backer, comment, date_prod) = ('https://s3-us-west-1.amazonaws.com/pley-land/15.jpg', '1-time creator', 'Lorem Ipsum', '2018-06-06T23:33:20.811Z') WHERE projects_id = 9628153 AND username = 'KassandraC';
+DELETE FROM comments WHERE username = 'KassandraC' AND comment = 'Lorem Ipsum' AND projects_id = 10000000;
+DELETE FROM comments WHERE username = 'KassandraC' AND comment = 'Lorem Ipsum' AND projects_id = 8747860;
+DELETE FROM comments WHERE username = 'KassandraC' AND comment = 'Lorem Ipsum' AND projects_id = 9628153;
